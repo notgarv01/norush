@@ -3,15 +3,17 @@ services:
     name: norush-tourism-backend
     runtime: node
     plan: free
-    buildCommand: npm install --production
+    buildCommand: ""
     startCommand: node server.js
+    healthCheckPath: /api/health
     envVars:
-      - key: UNSPLASH_ACCESS_KEY
-        sync: false
-      - key: BESTTIME_API_KEY
-        sync: false
       - key: GEMINI_API_KEY
         sync: false
       - key: GEMINI_API_KEY_BACKUP
         sync: false
-
+      - key: GEMINI_API_KEY_2
+        sync: false
+      - key: TOMTOM_API_KEY
+        sync: false
+      - key: UNSPLASH_ACCESS_KEY
+        sync: false
